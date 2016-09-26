@@ -1,0 +1,15 @@
+.container{
+  min-width:100%;
+}
+#input{
+  background-color:green;
+}
+#chart{
+  background-color:lightgrey;
+}
+#output{
+  background-color:red;
+}
+#canvas{
+
+}
