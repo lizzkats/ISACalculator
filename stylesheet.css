@@ -1,19 +1,33 @@
+/*import Helvetica Nue*/
+
 .container{
+  background-color: #E6DB93;
   min-width:100%;
 }
 #input{
-  background-color:green;
+  background-color:#737373;
+  color: #1AB898;
+  margin:1em;
 }
 #chart{
   background-color:lightgrey;
 }
 #output{
-  background-color:red;
+  background-color:#1AB898;
+  margin:1em;
 }
 #canvas{
 
 }
-.btn-primary{
-  color:purple;
-  background-color:purple;
+
+body{
+  font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+.btn-reset{
+  color:#F3F3F3;
+  background-color:#425859;
+}
+.btn-submit{
+  color:#F3F3F3;
+  background-color:#425859;
 }
