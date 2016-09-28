@@ -1,24 +1,45 @@
-$(document).ready(function(){
-  var salary = 0;
-  var stipend = 0;
-  var raise = 0;
+$(document).ready( function() {
 
-  var getInfo = function (id) {
+  var stipend = 0;
+  var raise;
+
+  var salary = 0;
+
+
+  function getInfo(id) {
     var field = document.getElementById(id).value;
-    console.log(id);
     return field;
   };
 
-  function getForm(){
+  function getLaptop(id) {
+    var haveLaptop = $(id).is(':checked');
+    return haveLaptop;
+  };
 
-    salary = getInfo('salary');
+  function getRadio(name) {
+    radio = document.getElementsByName(name);
+    for (var i = 0; i < radio.length; i++) {
+      if (radio[i].checked) {
+        return radio[i].value;
+      };
+    };
+  };
+
+  function setInfo(){
+
     stipend = getInfo('stipend');
-    raise = getInfo('raise');
+    console.log(stipend);
+    laptop = getLaptop('laptop');
+    console.log(laptop);
+    raise = getRadio('raise');
+    console.log(raise);
+    salary = getRadio('salary');
+    console.log(salary);
 
   };
 
   $('#submit-form').click( function() {
-      getForm();
+    setInfo();
 
   });
 
@@ -31,5 +52,4 @@ $(document).ready(function(){
   //
   // };
 
-}
-)
+})
