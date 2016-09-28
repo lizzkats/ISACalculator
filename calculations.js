@@ -9,26 +9,23 @@
     } else {
       laptop=0;
     }
-  console.log(laptop);
   };
 
-$(document).ready( function() {
+  function checkStipend( value ){
+    var parsed = parseInt( value + '' )
 
-
-
-
+    if( isNaN( parsed ) ) {
+      $('#error').html('<h3 style="color:red">Stipend must be a number!</h3>');
+    }
+    if( parsed > 1384 ) {
+      $('#error').html('<h3 style="color:red">Stipend max is 1384.</h3>');
+    }
+  };
 
   function getInfo(id) {
     var field = document.getElementById(id).value;
     return field;
   };
-  //
-  // function getLaptop(id) {
-  //
-  //
-  //   var haveLaptop = $(id).is(':checked');
-  //   return haveLaptop;
-  // };
 
   function getRadio(name) {
     radio = document.getElementsByName(name);
@@ -42,26 +39,24 @@ $(document).ready( function() {
   function setInfo(){
 
     stipend = getInfo('stipend')|| 0;
-    console.log(stipend);
-    // laptop = getLaptop('laptop');
-    // console.log(laptop);
+    console.log(typeof parseFloat(stipend));
+    checkStipend(stipend);
+
     raise = getRadio('raise');
-    console.log(raise);
+    // console.log(raise);
     salary = getRadio('salary');
-    console.log(salary);
+    // console.log(salary);
 
   };
 
+
+
+
+$(document).ready( function() {
   $('#submit-form').click( function() {
     setInfo();
-
+});
   });
-  // $('#laptop').click()
-
-
-
-
-  })
 
   //stipend calcuation
   //
