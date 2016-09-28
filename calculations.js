@@ -1,20 +1,34 @@
+  var stipend = 0;
+  var laptop = 0;
+  var raise;
+  var salary;
+
+  function laptopCheck() {
+    if(laptop===0){
+      laptop=1846;
+    } else {
+      laptop=0;
+    }
+  console.log(laptop);
+  };
+
 $(document).ready( function() {
 
-  var stipend = 0;
-  var raise;
 
-  var salary = 0;
+
 
 
   function getInfo(id) {
     var field = document.getElementById(id).value;
     return field;
   };
-
-  function getLaptop(id) {
-    var haveLaptop = $(id).is(':checked');
-    return haveLaptop;
-  };
+  //
+  // function getLaptop(id) {
+  //
+  //
+  //   var haveLaptop = $(id).is(':checked');
+  //   return haveLaptop;
+  // };
 
   function getRadio(name) {
     radio = document.getElementsByName(name);
@@ -27,10 +41,10 @@ $(document).ready( function() {
 
   function setInfo(){
 
-    stipend = getInfo('stipend');
+    stipend = getInfo('stipend')|| 0;
     console.log(stipend);
-    laptop = getLaptop('laptop');
-    console.log(laptop);
+    // laptop = getLaptop('laptop');
+    // console.log(laptop);
     raise = getRadio('raise');
     console.log(raise);
     salary = getRadio('salary');
@@ -42,6 +56,12 @@ $(document).ready( function() {
     setInfo();
 
   });
+  // $('#laptop').click()
+
+
+
+
+  })
 
   //stipend calcuation
   //
@@ -51,5 +71,3 @@ $(document).ready( function() {
   //
   //
   // };
-
-})
