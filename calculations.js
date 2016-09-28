@@ -102,6 +102,7 @@ var options = {
   scales: {
     xAxes: [{
       position: "bottom",
+      id: "salary",
       gridLines: {
         zeroLineColor: "#1AB898"
       }
@@ -111,26 +112,27 @@ var options = {
       display: true,
       position: "left",
       id: "cost-years"
-    }, {
-      type: "linear",
-      display: true,
-      position: "right",
-      id: "cost-upfront",
-
-      gridLines: {
-        drawOnChartArea: false,
-      },
-    }],
+    }, //{
+    //   type: "linear",
+    //   display: true,
+    //   position: "right",
+    //   id: "cost-upfront",
+    //
+    //   gridLines: {
+    //     drawOnChartArea: false,
+    //   },
+    //}
+  ],
   }
 };
 
-$.each(chartData.datasets, function(i, dataset) {
-    dataset.borderColor = "lightgrey";
-    dataset.backgroundColor = "blue";
-    dataset.pointBorderColor = "pink";
-    dataset.pointBackgroundColor = "orange";
-    dataset.pointBorderWidth = 1;
-});
+// $.each(chartData.datasets, function(i, dataset) {
+//     dataset.borderColor = "lightgrey";
+//     dataset.backgroundColor = "blue";
+//     dataset.pointBorderColor = "pink";
+//     dataset.pointBackgroundColor = "orange";
+//     dataset.pointBorderWidth = 1;
+// });
 
 
  function chart() {
@@ -208,9 +210,8 @@ $.each(chartData.datasets, function(i, dataset) {
     }
 
 
-    console.log('percentage '+percentage);
+    console.log('percentage'+percentage);
   }
-
 
 
 
