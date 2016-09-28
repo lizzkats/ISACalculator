@@ -25,14 +25,16 @@ $(document).ready( function() {
     };
   };
 
-
-
   function setInfo(){
 
     stipend = getInfo('stipend');
+    console.log(stipend);
     laptop = getLaptop('laptop');
+    console.log(laptop);
     raise = getRadio('raise');
+    console.log(raise);
     salary = getRadio('salary');
+    console.log(salary);
 
   };
 
