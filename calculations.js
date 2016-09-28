@@ -1,30 +1,38 @@
-$(document).ready(function(){
+$(document).ready( function() {
 
   var stipend = 0;
+  var raise;
 
-  var raise = 0;
   var salary = 0;
 
 
-  var getInfo = function (id) {
+  function getInfo(id) {
     var field = document.getElementById(id).value;
     return field;
   };
 
-  var getLaptop = function (id){
-    var haveLaptop = $(id).is(':checked')
+  function getLaptop(id) {
+    var haveLaptop = $(id).is(':checked');
+    return haveLaptop;
   };
+
+  function getRadio(name) {
+    radio = document.getElementsByName(name);
+    for (var i = 0; i < radio.length; i++) {
+      if (radio[i].checked) {
+        return radio[i].value;
+      };
+    };
+  };
+
+
 
   function setInfo(){
 
     stipend = getInfo('stipend');
     laptop = getLaptop('laptop');
-    console.log('laptop', laptop)
-
-    raise = getInfo('raise');
-    salary = getInfo('salary');
-      console.log('salary', salary)
-
+    raise = getRadio('raise');
+    salary = getRadio('salary');
 
   };
 

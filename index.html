@@ -24,24 +24,20 @@
                 <h3 class="col-xs-4">Stipend</h3>
                 <input placeholder="Enter Stipend" type="text" id="stipend" class="col-xs-4"/>
                 <h3 class="col-xs-3">Laptop?</h3>
-                <input type="checkbox" id="laptop" class="col-xs-1" checked="unchecked"/>
+                <input type="checkbox" id="laptop" class="col-xs-1" checked/>
               </div>
               <div class="row">
                 <h3 class="col-xs-6">Expected Yearly Raise</h3>
-                <input type="radio" name="raise" class="col-xs-1" id="raise2"/><label class="col-xs-1" for="raise2">2% Raise</label>
-                <input type="radio" name="raise" class="col-xs-1" id="raise5"/><label class="col-xs-1" for="raise5">5% Raise</label>
-                <input type="radio" name="raise" class="col-xs-1" id="raise10"/><label class="col-xs-1" for="raise10">10% Raise</label>
+                <input type="radio" name="raise" class="col-xs-1" id="raise2" value=".02"/><label class="col-xs-1" for="raise2">2% </label>
+                <input type="radio" name="raise" class="col-xs-1" id="raise5" value=".05"/><label class="col-xs-1" for="raise5">5% </label>
+                <input type="radio" name="raise" class="col-xs-1" id="raise10" value=".1"/><label class="col-xs-1" for="raise10">10% </label>
               </div>
               <div class="row">
                 <h3 class="col-xs-4">Starting Salary</h3>
-                <input name="salary" type="radio" class="col-xs-1" id="sal50"/>
-                <label class="col-xs-1" for="sal50">50k</label>
-                <input name="salary" type="radio" class="col-xs-1" id="sal75"/>
-                <label class="col-xs-1" for="sal75">75k</label>
-                <input name="salary" type="radio" class="col-xs-1" id="sal100"/>
-                <label class="col-xs-1" for="sal100">100k</label>
-                <input name="salary" type="radio" class="col-xs-1" id="sal150"/>
-                <label class="col-xs-1" for="sal150">150k</label>
+                <input type="radio" name="salary" class="col-xs-1" id="sal50" value="50000"/><label class="col-xs-1" for="sal50">50k</label>
+                <input type="radio" name="salary" class="col-xs-1" id="sal75" value="75000"/><label class="col-xs-1" for="sal75">75k</label>
+                <input type="radio" name="salary" class="col-xs-1" id="sal100" value="100000"/><label class="col-xs-1" for="sal100">100k</label>
+                <input type="radio" name="salary" class="col-xs-1" id="sal150" value="150000"/><label class="col-xs-1" for="sal150">150k</label>
               </div>
               <div id="buttons" class="rows">
                 <button id="submit-form" class="btn btn-submit" type="button">Submit</button>
