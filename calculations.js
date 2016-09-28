@@ -1,19 +1,34 @@
-$(document).ready( function() {
-
   var stipend = 0;
+  var laptop = 0;
   var raise;
+  var salary;
 
-  var salary = 0;
+  function laptopCheck() {
+    if(laptop===0){
+      laptop=1846;
+    } else {
+      laptop=0;
+    }
+  };
 
+  function checkStipend( value ){
+    var parsed = parseInt( value + '' );
+
+    if( isNaN( parsed ) ) {
+      $('#error').html('<h3 style="color:red">Stipend must be a number!</h3>');
+      return;
+    } else if( parsed > 1384 || parsed < 0 ) {
+      $('#error').html('<h3 style="color:red">Stipend must be between 0 and 1384.</h3>');
+      return;
+    } else {
+      $('#error').html('');
+      stipend=parsed;
+    }
+  };
 
   function getInfo(id) {
     var field = document.getElementById(id).value;
     return field;
-  };
-
-  function getLaptop(id) {
-    var haveLaptop = $(id).is(':checked');
-    return haveLaptop;
   };
 
   function getRadio(name) {
@@ -27,20 +42,23 @@ $(document).ready( function() {
 
   function setInfo(){
 
-    stipend = getInfo('stipend');
+    checkStipend(getInfo('stipend')|| 0);
     console.log(stipend);
-    laptop = getLaptop('laptop');
-    console.log(laptop);
+
     raise = getRadio('raise');
-    console.log(raise);
+    // console.log(raise);
     salary = getRadio('salary');
-    console.log(salary);
+    // console.log(salary);
 
   };
 
+
+
+
+$(document).ready( function() {
   $('#submit-form').click( function() {
     setInfo();
-
+});
   });
 
   //stipend calcuation
@@ -51,5 +69,3 @@ $(document).ready( function() {
   //
   //
   // };
-
-})

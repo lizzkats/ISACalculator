@@ -18,13 +18,16 @@
           <br> <!-- <button id="randomizeData">Randomize Data</button> -->
         </div>
         <div class = "col-xs-4">
+          <div id="error">
+
+          </div>
           <div id="input">
-            <form>
+            <form autocomplete="off">
               <div class="row">
                 <h3 class="col-xs-4">Stipend</h3>
                 <input placeholder="Enter Stipend" type="text" id="stipend" class="col-xs-4"/>
                 <h3 class="col-xs-3">Laptop?</h3>
-                <input type="checkbox" name="islaptop" id="laptop" class="col-xs-1" />
+                <input type="checkbox" onclick='laptopCheck();' name="laptop" id="laptop" class="col-xs-1" />
               </div>
               <div class="row">
                 <h3 class="col-xs-6">Expected Yearly Raise</h3>
