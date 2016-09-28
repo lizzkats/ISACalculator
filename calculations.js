@@ -112,27 +112,26 @@ var options = {
       display: true,
       position: "left",
       id: "cost-years"
-    }, //{
-    //   type: "linear",
-    //   display: true,
-    //   position: "right",
-    //   id: "cost-upfront",
-    //
-    //   gridLines: {
-    //     drawOnChartArea: false,
-    //   },
-    //}
-  ],
+    }, {
+      type: "linear",
+      display: false,
+      position: "right",
+      id: "cost-upfront",
+
+      gridLines: {
+        drawOnChartArea: false,
+      },
+    }],
   }
 };
 
-// $.each(chartData.datasets, function(i, dataset) {
-//     dataset.borderColor = "lightgrey";
-//     dataset.backgroundColor = "blue";
-//     dataset.pointBorderColor = "pink";
-//     dataset.pointBackgroundColor = "orange";
-//     dataset.pointBorderWidth = 1;
-// });
+$.each(chartData.datasets, function(i, dataset) {
+    dataset.borderColor = "lightgrey";
+    dataset.backgroundColor = "blue";
+    dataset.pointBorderColor = "pink";
+    dataset.pointBackgroundColor = "orange";
+    dataset.pointBorderWidth = 1;
+});
 
 
  function chart() {
