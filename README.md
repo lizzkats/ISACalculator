@@ -34,4 +34,4 @@ Changing variables, like salary and amount of stipend, can result in thousands o
 - [ ] The app compares ISA outcomes with upfront tuition.
 - [ ] The app will display labeled variables (e.g. Starting Salary: $80,000)
 - [ ] User is able to see where the ISA caps on the chart.
-- [x] The artifact produced is properly licensed, preferably with the [MIT license](href="https://github.com/lizzkats/ISACalculator/blob/master/LICENSE").
+- [x] The artifact produced is properly licensed, preferably with the [MIT license](https://github.com/lizzkats/ISACalculator/blob/master/LICENSE).
