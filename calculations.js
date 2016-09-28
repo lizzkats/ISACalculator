@@ -12,13 +12,17 @@
   };
 
   function checkStipend( value ){
-    var parsed = parseInt( value + '' )
+    var parsed = parseInt( value + '' );
 
     if( isNaN( parsed ) ) {
       $('#error').html('<h3 style="color:red">Stipend must be a number!</h3>');
-    }
-    if( parsed > 1384 ) {
-      $('#error').html('<h3 style="color:red">Stipend max is 1384.</h3>');
+      return;
+    } else if( parsed > 1384 || parsed < 0 ) {
+      $('#error').html('<h3 style="color:red">Stipend must be between 0 and 1384.</h3>');
+      return;
+    } else {
+      $('#error').html('');
+      stipend=parsed;
     }
   };
 
@@ -38,9 +42,8 @@
 
   function setInfo(){
 
-    stipend = getInfo('stipend')|| 0;
-    console.log(typeof parseFloat(stipend));
-    checkStipend(stipend);
+    checkStipend(getInfo('stipend')|| 0);
+    console.log(stipend);
 
     raise = getRadio('raise');
     // console.log(raise);
