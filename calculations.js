@@ -80,7 +80,7 @@
 
   function setInfo(){
 
-    stipend = checkStipend(getInfo('stipend'));
+    stipend = checkStipend(getInfo('stipend')||0);
 
     laptop=getLaptop();
 
@@ -147,39 +147,164 @@ function generateData(stipend, laptop, laptopPercentage, percentage, cap){
         y: calculateY(50000, stipend, laptop, laptopPercentage, percentage),
       },
       {
-        x: 75000,
-        y: calculateY(75000, stipend, laptop, laptopPercentage, percentage),
+        x:60000,
+        y:calculateY(60000, stipend, laptop, laptopPercentage, percentage)
       },
+      // {
+      //   x:61000,
+      //   y:calculateY(61000, stipend, laptop, laptopPercentage, percentage)
+      // },
+      // {
+      //   x:62000,
+      //   y:calculateY(62000, stipend, laptop, laptopPercentage, percentage)
+      // },
+      // {
+      //   x:63000,
+      //   y:calculateY(63000, stipend, laptop, laptopPercentage, percentage)
+      // },
+      // {
+      //   x:64000,
+      //   y:calculateY(64000, stipend, laptop, laptopPercentage, percentage)
+      // // },
+      // {
+      //   x:65000,
+      //   y:calculateY(65000, stipend, laptop, laptopPercentage, percentage)
+      // },
+      // {
+      //   x:66000,
+      //   y:calculateY(66000, stipend, laptop, laptopPercentage, percentage)
+      // },
+      // {
+      //   x:67500,
+      //   y:calculateY(67500, stipend, laptop, laptopPercentage, percentage)
+      // },
+      {
+        x:70000,
+        y:calculateY(70000, stipend, laptop, laptopPercentage, percentage)
+      },
+      // {
+      //   x:72500,
+      //   y:calculateY(72500, stipend, laptop, laptopPercentage, percentage)
+      // // },
+      // {
+      //   x: 75000,
+      //   y: calculateY(75000, stipend, laptop, laptopPercentage, percentage),
+      // },
+      // {
+      //   x:77500,
+      //   y:calculateY(77500, stipend, laptop, laptopPercentage, percentage)
+      // },
       {
         x: 80000,
         y: calculateY(80000, stipend, laptop, laptopPercentage, percentage),
       },
+      // {
+      //   x:82500,
+      //   y:calculateY(82500, stipend, laptop, laptopPercentage, percentage)
+      // // },
+      // {
+      //   x:85000,
+      //   y:calculateY(85000, stipend, laptop, laptopPercentage, percentage)
+      // },
+      // {
+      //   x:87500,
+      //   y:calculateY(87500, stipend, laptop, laptopPercentage, percentage)
+      // },
       {
         x: 90000,
         y: calculateY(90000, stipend, laptop, laptopPercentage, percentage),
       },
+      // {
+      //   x:92500,
+      //   y:calculateY(92500, stipend, laptop, laptopPercentage, percentage)
+      //  },
+      // {
+      //   x:95000,
+      //   y:calculateY(95000, stipend, laptop, laptopPercentage, percentage)
+      // },
+      // {
+      //   x:97500,
+      //   y:calculateY(97500, stipend, laptop, laptopPercentage, percentage)
+      // },
       {
         x: 100000,
         y: calculateY(100000, stipend, laptop, laptopPercentage, percentage),
       },
+      // {
+      //   x:105000,
+      //   y:calculateY(105000, stipend, laptop, laptopPercentage, percentage)
+      // },
       {
-        x: 125000,
-        y: calculateY(125000, stipend, laptop, laptopPercentage, percentage),
+        x:110000,
+        y:calculateY(110000, stipend, laptop, laptopPercentage, percentage)
       },
+      // {
+      //   x:115000,
+      //   y:calculateY(115000, stipend, laptop, laptopPercentage, percentage)
+      // },
+      {
+        x:120000,
+        y:calculateY(120000, stipend, laptop, laptopPercentage, percentage)
+      },
+      // {
+      //   x: 125000,
+      //   y: calculateY(125000, stipend, laptop, laptopPercentage, percentage),
+      // },
+      {
+        x:130000,
+        y:calculateY(130000, stipend, laptop, laptopPercentage, percentage)
+      },
+      // {
+      //   x:135000,
+      //   y:calculateY(135000, stipend, laptop, laptopPercentage, percentage)
+      // },
+      {
+        x:140000,
+        y:calculateY(140000, stipend, laptop, laptopPercentage, percentage)
+      },
+      // {
+      //   x:145000,
+      //   y:calculateY(145000, stipend, laptop, laptopPercentage, percentage)
+      // },
       {
         x: 150000,
         y: calculateY(150000, stipend, laptop, laptopPercentage, percentage),
       },
+      // {
+      //   x:155000,
+      //   y:calculateY(155000, stipend, laptop, laptopPercentage, percentage)
+      // },
       {
-        //line smoothing point
-        x: (cap/(percentage+laptopPercentage+.125)/3)-1,
-        y: cap,
+        x:160000,
+        y:calculateY(160000, stipend, laptop, laptopPercentage, percentage)
       },
+      // {
+      //   x:165000,
+      //   y:calculateY(165000, stipend, laptop, laptopPercentage, percentage)
+      // },
       {
-        //cap point
-        x:(cap/(percentage+laptopPercentage+.125)/3),
-        y:cap,
+        x:170000,
+        y:calculateY(170000, stipend, laptop, laptopPercentage, percentage)
       },
+      // {
+      //   x:18000,
+      //   y:calculateY(16000, stipend, laptop, laptopPercentage, percentage)
+      // },
+      // {
+      //   x:19000,
+      //   y:calculateY(16000, stipend, laptop, laptopPercentage, percentage)
+      // },
+      //
+      // {
+      //   //line smoothing point
+      //   x: (cap/(percentage+laptopPercentage+.125)/3)-1,
+      //   y: cap,
+      // },
+      // {
+      //   //cap point
+      //   x:(cap/(percentage+laptopPercentage+.125)/3),
+      //   y:cap,
+      // },
       {
         x: 175000,
         y: calculateY(175000, stipend, laptop, laptopPercentage, percentage),
@@ -308,6 +433,109 @@ $.each(chartData.datasets, function(i, dataset) {
      options: options
    })
  }
+
+
+
+//EVERYTHING BELOW THIS IS DATA FOR EXPERIMENTING WITH CHART ONLOAD
+
+//
+//
+//
+//
+//
+// var placeholder={ datasets:[{
+//   pointRadius:0,
+//   label: "Upfront Cost",
+//   xAxisID: "salary",
+//   yAxisID: "cost-upfront",
+//   data: [
+//   //   {
+//   //   x: 0,
+//   //   y: 29750,
+//   // },
+//   {
+//     x: 25000,
+//     y: 29750,
+//   },
+//   {
+//     x: 50000,
+//     y: 29750,
+//   },
+//   {
+//     x: 75000,
+//     y: 29750,
+//   },
+//   {
+//     x: 100000,
+//     y: 29750,
+//   },
+//   {
+//     x: 125000,
+//     y: 29750,
+//   },
+//   {
+//     x: 150000,
+//     y: 29750,
+//   },
+//   {
+//     x: 175000,
+//     y: 29750,
+//   },
+//   {
+//     x: 200000,
+//     y: 29750,
+//   },
+// ]
+// }]
+// };
+//
+//  window.onload=function(){
+//    var ctx = document.getElementById("canvas").getContext("2d");
+//    window.myScatter = Chart.Scatter(ctx, {
+//      data: placeholder,
+//      options: {
+//        responsive: true,
+//        hoverMode: "single",
+//        title: {
+//          display: true,
+//          text: "ISA Calculator"
+//        },
+//        scales: {
+//          xAxes: [{
+//            ticks:{
+//              fixedStepSize:25000,
+//              min:25000,
+//              max:200000
+//            },
+//            position: "bottom",
+//            id: "salary",
+//            scaleLabel:{
+//              display:true,
+//              labelString:"Starting Salary",
+//            },
+//            gridLines: {
+//              zeroLineColor: "#1AB898"
+//            }
+//          }],
+//          yAxes: [{
+//            ticks:{
+//              fixedStepSize:15000,
+//              min:0,
+//              max:100000
+//            },
+//            type: "linear",
+//            display: true,
+//            position: "right",
+//            id: "cost-upfront",
+//            gridLines: {
+//              drawOnChartArea: false,
+//            },
+//          }],
+//        }
+//      }
+//    });
+//
+//  };
 //
 //
 // $(document).ready( function() {
