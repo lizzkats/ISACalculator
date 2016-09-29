@@ -28,7 +28,7 @@
             <form autocomplete="off">
               <div class="row">
                 <h3 class="col-xs-4">Stipend</h3>
-                <input placeholder="Enter Stipend" type="text" id="stipend" class="col-xs-4"/>
+                <input placeholder="Enter Stipend" type="text" id="stipend" class="col-xs-4" value="0"/>
                 <h3 class="col-xs-3">Laptop?</h3>
                 <input type="checkbox" onclick='laptopCheck();' name="laptop" id="laptop" class="col-xs-1" />
               </div>
@@ -46,7 +46,7 @@
                 <input type="radio" name="salary" class="col-xs-1" id="sal150" value="150000"/><label class="col-xs-1" for="sal150">150k</label>
               </div>
               <div id="buttons" class="rows">
-                <button id="submit-form" class="btn btn-submit" type="button">Submit</button>
+                <button id="submit-form" onclick="setInfo();" class="btn btn-submit" type="button">Submit</button>
                 <button id="reset-form" class="btn btn-reset" type="button">Reset</button>
               </div>
             </form>
