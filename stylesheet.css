@@ -45,7 +45,7 @@ body{
  /*Phone 640 - 860 */
 @media screen and (max-width: 860px) {
   h3{
-    font-size: 1.4em;
+    font-size: 1.4em !important;
     color: white;
   }
 }
