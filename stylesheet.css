@@ -1,4 +1,9 @@
+
+@import url(https://fonts.googleapis.com/css?family=Julius+Sans+One);
+@import 'https://fonts.googleapis.com/css?family=Roboto';
+
 /*import Helvetica Nue*/
+
 
 .container{
   background-color: #E6DB93;
@@ -19,11 +24,14 @@
 #chart-margins{
   width:60%;
   margin-left:20%;
-  margin-right:20$;
+  margin-right:20%;
+}
+body{
+  font-family:'Roboto',sans-serif !important;
 }
 
-body{
-  font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+h3{
+  font-family:'Julius Sans One',sans-serif !important;
 }
 .btn-reset{
   color:#F3F3F3;
