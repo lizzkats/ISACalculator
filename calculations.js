@@ -100,8 +100,8 @@ var chartData={
     xAxisID: "salary",
     yAxisID: "cost-years",
     data:[{
-      x: 25000,
-      y: calculateY(25000),
+      x: 49999,
+      y: calculateY(49999),
     },
     {
       x: 50000,
@@ -109,7 +109,7 @@ var chartData={
     },
     {
       x: 75000,
-      y: 100000 //calculateY(75000),
+      y: calculateY(75000),
     },
     {
       x: 100000,
