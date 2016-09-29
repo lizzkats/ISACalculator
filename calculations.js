@@ -5,12 +5,83 @@
   var programFee=29750;
   var cap;
   var raise;
-  var salary;
-  var percentage;
+  var salary = 45000;
+  var percentage = 0;
+
+  function laptopCheck() {
+    if(laptop===0){
+      laptop=1846;
+      laptopPercentage=.01;
+    } else {
+      laptop=0;
+      laptopPercentage=0;
+    }
+  };
+
+  function checkStipend( value ){
+    var parsed = parseInt( value + '' );
+
+    if( isNaN( parsed ) ) {
+      $('#error').html('<h3 style="color:red">Stipend must be a number!</h3>');
+      return;
+    } else if( parsed > 1384.6 || parsed < 0 ) {
+      $('#error').html('<h3 style="color:red">Stipend must be between 0 and 1384.</h3>');
+      return;
+    } else {
+      $('#error').html('');
+      monthlyStipend=parsed;
+      stipend=monthlyStipend*10;
+    }
+  };
+
+  function getInfo(id) {
+    var field = document.getElementById(id).value;
+    return field;
+  };
+
+  function getRadio(name) {
+    radio = document.getElementsByName(name);
+    for (var i = 0; i < radio.length; i++) {
+      if (radio[i].checked) {
+        return radio[i].value;
+      };
+    };
+  };
+
+  function setInfo(){
+
+    checkStipend(getInfo('stipend') || 0);
+    console.log(monthlyStipend);
+
+    raise = getRadio('raise');
+    // console.log(raise);
+    salary = getRadio('salary');
+    // console.log(salary);
+
+  };
+
+
+  function stipendToPercentage(stipend) {
+    if(stipend<1){
+      percentage=0;
+    } else {
+      percentage=1038.45/stipend;
+    }
+
+
+    console.log('percentage'+percentage);
+
+  }
+
+
 
   //use inside graph object
   function calculateY(salary) {
       var cost = salary * 3 * (percentage+laptopPercentage+.125);
+      console.log('1st-cost '+cost);
+      console.log('1st-salary '+salary);
+      console.log('1st-percentage '+percentage);
+      console.log('1st-laptopPercentage '+laptopPercentage);
       cap=(programFee+stipend+laptop)*2;
       if (cost>cap){
         cost=cap;
@@ -38,7 +109,7 @@ var chartData={
     },
     {
       x: 75000,
-      y: calculateY(75000),
+      y: 100000 //calculateY(75000),
     },
     {
       x: 100000,
@@ -127,12 +198,11 @@ var options = {
 
 $.each(chartData.datasets, function(i, dataset) {
     dataset.borderColor = "lightgrey";
-    dataset.backgroundColor = "blue";
+    // dataset.backgroundColor = "blue";
     dataset.pointBorderColor = "pink";
     dataset.pointBackgroundColor = "orange";
     dataset.pointBorderWidth = 1;
 });
-
 
  function chart() {
    var ctx = document.getElementById("canvas").getContext("2d");
@@ -141,77 +211,6 @@ $.each(chartData.datasets, function(i, dataset) {
      options: options
    })
  }
-
-
-
-
-
-
-
-  function laptopCheck() {
-    if(laptop===0){
-      laptop=1846;
-      laptopPercentage=.01;
-    } else {
-      laptop=0;
-      laptopPercentage=0;
-    }
-  };
-
-  function checkStipend( value ){
-    var parsed = parseInt( value + '' );
-
-    if( isNaN( parsed ) ) {
-      $('#error').html('<h3 style="color:red">Stipend must be a number!</h3>');
-      return;
-    } else if( parsed > 1384.6 || parsed < 0 ) {
-      $('#error').html('<h3 style="color:red">Stipend must be between 0 and 1384.</h3>');
-      return;
-    } else {
-      $('#error').html('');
-      monthlyStipend=parsed;
-      stipend=monthlyStipend*10;
-    }
-  };
-
-  function getInfo(id) {
-    var field = document.getElementById(id).value;
-    return field;
-  };
-
-  function getRadio(name) {
-    radio = document.getElementsByName(name);
-    for (var i = 0; i < radio.length; i++) {
-      if (radio[i].checked) {
-        return radio[i].value;
-      };
-    };
-  };
-
-  function setInfo(){
-
-    checkStipend(getInfo('stipend') || 0);
-    console.log(monthlyStipend);
-
-    raise = getRadio('raise');
-    // console.log(raise);
-    salary = getRadio('salary');
-    // console.log(salary);
-
-  };
-
-
-  function stipendToPercentage(stipend) {
-    if(stipend<1){
-      percentage=0;
-    } else {
-      percentage=1038.45/stipend;
-    }
-
-
-    console.log('percentage'+percentage);
-  }
-
 
 
 $(document).ready( function() {
