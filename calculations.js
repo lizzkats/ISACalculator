@@ -11,7 +11,6 @@
 
   function getLaptop() {
   var  laptop=  document.getElementById('laptop').checked;
-   console.log('laptop check is '+laptop);
    if(laptop){
      laptop=1846;
    } else {
@@ -22,7 +21,6 @@
 
   function getLaptopPercentage() {
     var laptopPercentage=  document.getElementById('laptop').checked;
-    console.log('laptop check is '+laptop);
     if(laptop){
       laptopPercentage=.01;
     } else {
@@ -30,16 +28,16 @@
     }
     return laptopPercentage;
   }
-
-  function laptopCheck() {
-    if(laptop===0){
-      laptop=1846;
-      laptopPercentage=.01;
-    } else {
-      laptop=0;
-      laptopPercentage=0;
-    }
-  };
+  //
+  // function laptopCheck() {
+  //   if(laptop===0){
+  //     laptop=1846;
+  //     laptopPercentage=.01;
+  //   } else {
+  //     laptop=0;
+  //     laptopPercentage=0;
+  //   }
+  // };
 
   function checkStipend( value ){
     var parsed = parseInt( value + '' );
@@ -81,21 +79,24 @@
   function setInfo(){
 
     stipend = checkStipend(getInfo('stipend')||0);
-
+    setOutput((stipend/10),'monthly-stipend-output');
     laptop=getLaptop();
+    setOutput(laptop,'laptop-output')
+    setOutput(stipend+laptop,'total-stipend-output');
+
 
     laptopPercentage = getLaptopPercentage();
-
     percentage=stipendToPercentage(stipend);
+    setOutput(((laptopPercentage+percentage+.125)*100)+'%','isa-output');
 
     cap=(programFee+stipend+laptop)*2;
-    setOutput(cap, 'cap-data');
+    setOutput(cap, 'cap-output');
 
     raise = getRadio('raise');
-    // console.log(raise);
+    console.log('raise '+raise);
     salary = getRadio('salary');
-    // console.log(salary);
-    return generateData(stipend, laptop, laptopPercentage, percentage, cap);
+
+    return generateData(stipend, laptop, laptopPercentage, percentage, raise, salary, cap);
   };
 
 
@@ -109,12 +110,34 @@
     return percentage;
   }
 
+  function resetButton(){
+      location.reload();
+
+
+  }
+
+
+
+
+
+
+
+
+
 
 
   //use inside graph object
-  function calculateY(salary, stipend, laptop, laptopPercentage, percentage) {
+  function calculateY(salary, stipend, laptop, laptopPercentage, percentage, raise) {
+      var cost=0;
+      var year2=salary+(salary*raise);
+      console.log('raise inside calculations '+raise);
+      if(raise===0){
+      cost = salary *3 * (percentage+laptopPercentage+.125);
+    } else {
+      cost = (salary + year2 + (year2+(year2*raise))) * (percentage+laptopPercentage+.125);
+    }
+console.log('calculated cost '+cost);
 
-      var cost = salary * 3 * (percentage+laptopPercentage+.125);
       cap=(programFee+stipend+laptop)*2;
       if (cost>cap){
         cost=cap;
@@ -125,7 +148,7 @@
       return cost;
   }
 
-function generateData(stipend, laptop, laptopPercentage, percentage, cap){
+function generateData(stipend, laptop, laptopPercentage, percentage, raise, salary, cap){
   var chartData={
     datasets:[{
 
@@ -135,20 +158,20 @@ function generateData(stipend, laptop, laptopPercentage, percentage, cap){
       yAxisID: "cost-isa",
       data:[{
         x: 49999,
-        y: calculateY(49999, stipend, laptop, laptopPercentage, percentage),
+        y: calculateY(49999, stipend, laptop, laptopPercentage, percentage, raise),
       },
       {
         //line smoothing point
         x: 50000,
-        y: calculateY(50000, stipend, laptop, laptopPercentage, percentage)-1,
+        y: calculateY(50000, stipend, laptop, laptopPercentage, percentage, raise)-1,
       },
       {
         x: 50000,
-        y: calculateY(50000, stipend, laptop, laptopPercentage, percentage),
+        y: calculateY(50000, stipend, laptop, laptopPercentage, percentage, raise),
       },
       {
         x:60000,
-        y:calculateY(60000, stipend, laptop, laptopPercentage, percentage)
+        y:calculateY(60000, stipend, laptop, laptopPercentage, percentage, raise)
       },
       // {
       //   x:61000,
@@ -180,7 +203,7 @@ function generateData(stipend, laptop, laptopPercentage, percentage, cap){
       // },
       {
         x:70000,
-        y:calculateY(70000, stipend, laptop, laptopPercentage, percentage)
+        y:calculateY(70000, stipend, laptop, laptopPercentage, percentage, raise)
       },
       // {
       //   x:72500,
@@ -196,7 +219,7 @@ function generateData(stipend, laptop, laptopPercentage, percentage, cap){
       // },
       {
         x: 80000,
-        y: calculateY(80000, stipend, laptop, laptopPercentage, percentage),
+        y: calculateY(80000, stipend, laptop, laptopPercentage, percentage, raise),
       },
       // {
       //   x:82500,
@@ -212,7 +235,7 @@ function generateData(stipend, laptop, laptopPercentage, percentage, cap){
       // },
       {
         x: 90000,
-        y: calculateY(90000, stipend, laptop, laptopPercentage, percentage),
+        y: calculateY(90000, stipend, laptop, laptopPercentage, percentage, raise),
       },
       // {
       //   x:92500,
@@ -228,7 +251,7 @@ function generateData(stipend, laptop, laptopPercentage, percentage, cap){
       // },
       {
         x: 100000,
-        y: calculateY(100000, stipend, laptop, laptopPercentage, percentage),
+        y: calculateY(100000, stipend, laptop, laptopPercentage, percentage, raise),
       },
       // {
       //   x:105000,
@@ -236,7 +259,7 @@ function generateData(stipend, laptop, laptopPercentage, percentage, cap){
       // },
       {
         x:110000,
-        y:calculateY(110000, stipend, laptop, laptopPercentage, percentage)
+        y:calculateY(110000, stipend, laptop, laptopPercentage, percentage, raise)
       },
       // {
       //   x:115000,
@@ -244,7 +267,7 @@ function generateData(stipend, laptop, laptopPercentage, percentage, cap){
       // },
       {
         x:120000,
-        y:calculateY(120000, stipend, laptop, laptopPercentage, percentage)
+        y:calculateY(120000, stipend, laptop, laptopPercentage, percentage, raise)
       },
       // {
       //   x: 125000,
@@ -252,7 +275,7 @@ function generateData(stipend, laptop, laptopPercentage, percentage, cap){
       // },
       {
         x:130000,
-        y:calculateY(130000, stipend, laptop, laptopPercentage, percentage)
+        y:calculateY(130000, stipend, laptop, laptopPercentage, percentage, raise)
       },
       // {
       //   x:135000,
@@ -260,7 +283,7 @@ function generateData(stipend, laptop, laptopPercentage, percentage, cap){
       // },
       {
         x:140000,
-        y:calculateY(140000, stipend, laptop, laptopPercentage, percentage)
+        y:calculateY(140000, stipend, laptop, laptopPercentage, percentage, raise)
       },
       // {
       //   x:145000,
@@ -268,7 +291,7 @@ function generateData(stipend, laptop, laptopPercentage, percentage, cap){
       // },
       {
         x: 150000,
-        y: calculateY(150000, stipend, laptop, laptopPercentage, percentage),
+        y: calculateY(150000, stipend, laptop, laptopPercentage, percentage, raise),
       },
       // {
       //   x:155000,
@@ -276,7 +299,7 @@ function generateData(stipend, laptop, laptopPercentage, percentage, cap){
       // },
       {
         x:160000,
-        y:calculateY(160000, stipend, laptop, laptopPercentage, percentage)
+        y:calculateY(160000, stipend, laptop, laptopPercentage, percentage, raise)
       },
       // {
       //   x:165000,
@@ -284,7 +307,7 @@ function generateData(stipend, laptop, laptopPercentage, percentage, cap){
       // },
       {
         x:170000,
-        y:calculateY(170000, stipend, laptop, laptopPercentage, percentage)
+        y:calculateY(170000, stipend, laptop, laptopPercentage, percentage, raise)
       },
       // {
       //   x:18000,
@@ -307,11 +330,11 @@ function generateData(stipend, laptop, laptopPercentage, percentage, cap){
       // },
       {
         x: 175000,
-        y: calculateY(175000, stipend, laptop, laptopPercentage, percentage),
+        y: calculateY(175000, stipend, laptop, laptopPercentage, percentage, raise),
       },
       {
         x:200000,
-        y: calculateY(200000, stipend, laptop, laptopPercentage, percentage),
+        y: calculateY(200000, stipend, laptop, laptopPercentage, percentage, raise),
       }
       ]
     },
