@@ -33,3 +33,19 @@ body{
   color:#F3F3F3;
   background-color:#425859;
 }
+
+/*Tablet 768 - 1024*/
+@media screen and (max-width: 1024px) and (min-width: 861px) {
+  h3{
+    font-size: 1.5em !important;
+    color: green !important;
+  }
+}
+
+ /*Phone 640 - 860 */
+@media screen and (max-width: 860px) {
+  h3{
+    font-size: 1.4em !important;
+    color: white;
+  }
+}
