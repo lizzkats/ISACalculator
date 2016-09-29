@@ -25,7 +25,7 @@
 
           </div>
           <div id="input">
-            <form autocomplete="off">
+            <form autocomplete="off" action="javascript:setInfo();">
               <div class="row">
                 <h3 class="col-xs-4">Stipend</h3>
                 <input placeholder="Enter Stipend" type="text" id="stipend" class="col-xs-4" value="0"/>
@@ -46,7 +46,7 @@
                 <input type="radio" name="salary" class="col-xs-1" id="sal150" value="150000"/><label class="col-xs-1" for="sal150">150k</label>
               </div>
               <div id="buttons" class="rows">
-                <button id="submit-form" onclick="setInfo();" class="btn btn-submit" type="button">Submit</button>
+                <input id="submit-form" onclick="setInfo();" class="btn btn-submit" type="submit" value="Submit"/>
                 <button id="reset-form" class="btn btn-reset" type="button">Reset</button>
               </div>
             </form>
