@@ -97,6 +97,8 @@
 
   var chartData={
     datasets:[{
+
+        pointRadius:0,
       label: "3 Year ISA Cost",
       xAxisID: "salary",
       yAxisID: "cost-isa",
@@ -158,6 +160,7 @@
       ]
     },
       {
+        pointRadius:0,
         label: "Upfront Cost",
         xAxisID: "salary",
         yAxisID: "cost-upfront",

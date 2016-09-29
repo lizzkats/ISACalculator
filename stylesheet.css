@@ -16,8 +16,10 @@
   background-color:#1AB898;
   margin:1em;
 }
-#canvas{
-
+#chart-margins{
+  width:60%;
+  margin-left:20%;
+  margin-right:20$;
 }
 
 body{
