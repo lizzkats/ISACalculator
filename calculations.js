@@ -73,6 +73,11 @@
     };
   };
 
+  function setOutput(variable, target){
+      document.getElementById(target).innerHTML=variable;
+
+  }
+
   function setInfo(){
 
     stipend = checkStipend(getInfo('stipend'));
@@ -84,7 +89,7 @@
     percentage=stipendToPercentage(stipend);
 
     cap=(programFee+stipend+laptop)*2;
-
+    setOutput(cap, 'cap-data');
 
     raise = getRadio('raise');
     // console.log(raise);
@@ -110,10 +115,6 @@
   function calculateY(salary, stipend, laptop, laptopPercentage, percentage) {
 
       var cost = salary * 3 * (percentage+laptopPercentage+.125);
-      console.log('1st-cost '+cost);
-      console.log('1st-salary '+salary);
-      console.log('1st-percentage '+percentage);
-      console.log('1st-laptopPercentage '+laptopPercentage);
       cap=(programFee+stipend+laptop)*2;
       if (cost>cap){
         cost=cap;
@@ -121,8 +122,6 @@
       else if (salary < 50000){
         cost = 0;
       }
-      console.log('cap '+cap);
-      console.log('cost '+cost);
       return cost;
   }
 
