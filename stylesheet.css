@@ -48,7 +48,7 @@ label{
 .radioButtons{
   margin-top:1.50em;
   margin-left:-.5em;
-  margin-right:1em;
+  margin-right:2em;
 }
 .container{
   /*background-color: #E6DB93;*/
@@ -57,6 +57,10 @@ label{
   min-width:100%;
   min-height:100%;
 }
+#input-margins{
+  margin: 1em -.8em 1em 1em;
+}
+
 #input{
   /*background-color:#737373;
   color: #1AB898;*/
@@ -64,8 +68,9 @@ label{
   background-color:#56C4AE;
 
   background-color:#AED6EB;
-  margin:1em;
+
 }
+
 #chart{
   /*background-color:lightgrey;*/
   width:50%;
@@ -84,9 +89,11 @@ label{
   background-color:#56C4AE;
 
   background-color:#AED6EB;
-  margin:1em;
-}
 
+}
+#output-margins{
+  margin: 1em 1em 1em 0em;
+}
 #input, #output{
   height:22em;
 }
@@ -131,7 +138,7 @@ h3{
  /*Phone 640 - 860 */
 @media screen and (max-width: 860px) {
   h1{
-    font-size:1.6em; 
+    font-size:1.6em;
   }
   #chart-row{
     height: 15em;
