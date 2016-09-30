@@ -3,12 +3,19 @@
 @import 'https://fonts.googleapis.com/css?family=Roboto';
 
 /*import Helvetica Nue*/
+a:hover,
+a,
+a:visited{
+  text-decoration:none;
+  color:black;
+}
+
+
 #hover-info{
   display:none;
 }
 
-
-#page-title{
+#page-title, #output-title{
   font-family:'Julius Sans One',sans-serif;
   text-align:center;
 }
@@ -17,7 +24,8 @@
 #laptop-output,
 #total-stipend-output,
 #monthly-stipend-output,
-#isa-output{
+#isa-output,
+#fee-output{
   margin-top:2em;
 
 }
@@ -54,6 +62,8 @@ label{
   color: #1AB898;*/
   background-color:#1AB898;
   background-color:#56C4AE;
+
+  background-color:#AED6EB;
   margin:1em;
 }
 #chart{
@@ -61,10 +71,13 @@ label{
   width:50%;
   margin-left:25%;
   margin-right:25%;
-  min-height:30em;
+  min-height:40em;
+  background-color:#AED6EB;
 }
 #output{
   background-color:#56C4AE;
+
+  background-color:#AED6EB;
   margin:1em;
 }
 
