@@ -9,6 +9,20 @@
   var percentage = 0;
 
 
+  //
+  // function hoverEvent(){
+  //   // switch(element)
+  //   document.getElementById('hover-info').innerHTML= "<h1>Stipend Info</h1>";
+  //   document.getElementById('hover-info').style.display = 'inline';
+  //
+  // }
+  //
+  // function unHover(){
+  //   document.getElementById('hover-info').style.display= 'none';
+  // }
+
+
+
   function getLaptop() {
   var  laptop=  document.getElementById('laptop').checked;
    if(laptop){
