@@ -27,7 +27,7 @@ Changing variables, like salary and amount of stipend, can result in thousands o
 - [X] All necessary information is displayed on one page.
 - [X] User can input amounts for salary and stipend options, for every $100 taken in the stipend, the ISA percentage will increase.
 - [X] User can select variables (like income and stipend) with buttons or forms.
-- [ ] User can define what their starting salary is
+- [X] User can define what their starting salary is
 - [X] User can define what their annual raise is
 - [X] User should see their full amount paid back to LG
 - [X] User should click on refresh button and have all output refreshed

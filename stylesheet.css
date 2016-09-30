@@ -25,7 +25,8 @@ a:visited{
 #total-stipend-output,
 #monthly-stipend-output,
 #isa-output,
-#fee-output{
+#fee-output,
+#total-output{
   margin-top:2em;
 
 }
