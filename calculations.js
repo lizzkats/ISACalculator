@@ -82,9 +82,12 @@
     cap=(programFee+stipend+laptop)*2;
     setOutput(cap, 'cap-output');
 
-    raise = getRadio('raise');
-    console.log('raise '+raise);
-    salary = getRadio('salary');
+    raise = parseInt(getRadio('raise'), 10);
+
+    salary = parseInt(getRadio('salary'), 10);
+
+    setOutput(calculateY(salary, stipend, laptop, laptopPercentage, percentage, raise),'total-output')
+
 
     return generateData(stipend, laptop, laptopPercentage, percentage, raise, salary, cap);
   };
@@ -106,17 +109,16 @@
 
   }
 
+
   //use inside graph object
   function calculateY(salary, stipend, laptop, laptopPercentage, percentage, raise) {
       var cost=0;
       var year2=salary+(salary*raise);
-      console.log('raise inside calculations '+raise);
       if(raise===0){
       cost = salary *3 * (percentage+laptopPercentage+.125);
     } else {
       cost = (salary + year2 + (year2+(year2*raise))) * (percentage+laptopPercentage+.125);
     }
-console.log('calculated cost '+cost);
 
       cap=(programFee+stipend+laptop)*2;
       if (cost>cap){
