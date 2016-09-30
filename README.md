@@ -24,14 +24,14 @@ Changing variables, like salary and amount of stipend, can result in thousands o
 
 ## Required Specs (Must Have)
 
-- [ ] All necessary information is displayed on one page.
-- [ ] User can input amounts for salary and stipend options, for every $100 taken in the stipend, the ISA percentage will increase.
-- [ ] User can select variables (like income and stipend) with buttons or forms.
+- [X] All necessary information is displayed on one page.
+- [X] User can input amounts for salary and stipend options, for every $100 taken in the stipend, the ISA percentage will increase.
+- [X] User can select variables (like income and stipend) with buttons or forms.
 - [ ] User can define what their starting salary is
-- [ ] User can define what their annual raise is
-- [ ] User should see their full amount paid back to LG
-- [ ] User should click on refresh button and have all output refreshed
-- [ ] The app compares ISA outcomes with upfront tuition.
-- [ ] The app will display labeled variables (e.g. Starting Salary: $80,000)
-- [ ] User is able to see where the ISA caps on the chart.
-- [x] The artifact produced is properly licensed, preferably with the [MIT license](https://github.com/lizzkats/ISACalculator/blob/master/LICENSE).
+- [X] User can define what their annual raise is
+- [X] User should see their full amount paid back to LG
+- [X] User should click on refresh button and have all output refreshed
+- [X] The app compares ISA outcomes with upfront tuition.
+- [X] The app will display labeled variables (e.g. Starting Salary: $80,000)
+- [X] User is able to see where the ISA caps on the chart.
+- [X] The artifact produced is properly licensed, preferably with the [MIT license](https://github.com/lizzkats/ISACalculator/blob/master/LICENSE).
