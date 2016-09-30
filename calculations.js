@@ -82,7 +82,7 @@
     cap=(programFee+stipend+laptop)*2;
     setOutput(cap, 'cap-output');
 
-    raise = parseInt(getRadio('raise'), 10);
+    raise = parseFloat(getRadio('raise'), 10);
 
     salary = parseInt(getRadio('salary'), 10);
 
