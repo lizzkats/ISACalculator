@@ -13,6 +13,7 @@
   </head>
   <body>
     <div class="container">
+      <div id="page-title-box"><h1 id="page-title">Learners Guild ISA Calculator</h1></div>
       <div class = "row">
         <div id="chart" class = "col-xs-12">
           <div id="chart-margins">
@@ -25,60 +26,81 @@
           <div id="error">
 
           </div>
+          <div id="hover-info">Test if I'm hidden</div>
           <div id="input">
             <form autocomplete="off" action="javascript:setInfo();">
               <div class="row">
-                <h3 class="col-xs-4">Stipend</h3>
+                <h3 id='stipend-title' class="col-xs-3"><a href="" title="You can request a stipend between $0 and $1384.60 per month. ISA percentage is increased with every 100 dollar increase.">Stipend</a></h3>
                 <input placeholder="Enter Stipend" type="text" id="stipend" class="col-xs-4" value="0"/>
-                <h3 class="col-xs-3">Laptop?</h3>
+                <h3 class="col-xs-3"><a href="" title="If you choose this option, you'll receive an additional $1846 as a laptop stipend. This increases your ISA by 1%.">Laptop?</a></h3>
                 <input type="checkbox" onclick='laptopCheck();' name="laptop" id="laptop" class="col-xs-1" />
               </div>
               <div class="row">
-                <h3 class="col-xs-4">Expected Yearly Raise</h3>
+                <h3 class="col-xs-3">Expected Yearly Raise</h3>
+                <div class='radioButtons'>
                 <input type="radio" name="raise" class="col-xs-1" id="raise0" value="0" checked/><label class="col-xs-1" for="raise0">0% </label>
                 <input type="radio" name="raise" class="col-xs-1" id="raise2" value=".02"/><label class="col-xs-1" for="raise2">2% </label>
                 <input type="radio" name="raise" class="col-xs-1" id="raise5" value=".05"/><label class="col-xs-1" for="raise5">5% </label>
                 <input type="radio" name="raise" class="col-xs-1" id="raise10" value=".1"/><label class="col-xs-1" for="raise10">10% </label>
               </div>
+              </div>
               <div class="row">
-                <h3 class="col-xs-4">Starting Salary</h3>
+                <h3 class="col-xs-3">Starting Salary</h3>
+                <div class='radioButtons'>
                 <input type="radio" name="salary" class="col-xs-1" id="sal50" value="50000"/><label class="col-xs-1" for="sal50">50k</label>
                 <input type="radio" name="salary" class="col-xs-1" id="sal75" value="75000"/><label class="col-xs-1" for="sal75">75k</label>
                 <input type="radio" name="salary" class="col-xs-1" id="sal100" value="100000"/><label class="col-xs-1" for="sal100">100k</label>
                 <input type="radio" name="salary" class="col-xs-1" id="sal150" value="150000"/><label class="col-xs-1" for="sal150">150k</label>
               </div>
-              <div id="buttons" class="rows">
+              </div>
+              <div id="buttons" class="row">
+                <div class="col-xs-4"></div>
+                <div class="col-xs-4">
                 <input id="submit-form" onclick="setInfo();" class="btn btn-submit" type="submit" value="Submit"/>
                 <button id="reset-form" onclick="resetButton();" class="btn btn-reset" type="button">Reset</button>
+              </div>
+              <div class="col-xs-4"></div>
               </div>
             </form>
           </div>
         </div>
         <div class = "col-xs-8">
           <div id="output">
+            <div id="space" class="row">
+              <div class="col-xs-3"></div>
+              <div class="col-xs-3"></div>
+              <div class="col-xs-3"></div>
+              <div class="col-xs-3"></div>
+              <div class="col-xs-3"></div>
+              <div class="col-xs-3"></div>
+              <div class="col-xs-3"></div>
+
+            </div>
             <div id="cost-cap" class="row">
-              <div class="col-xs-3"><h3>Program Cost Cap</h3></div>
-              <div class="col-xs-3" id="cap-output">Data goes here</div>
-              <div class="col-xs-3"><h3>ISA Percentage</h3></div>
-              <div id="isa-output" class="col-xs-3"></div>
+              <div class="col-xs-3"><h3>Monthly Stipend</h3></div>
+              <h5 class="col-xs-3" id="monthly-stipend-output"> Cost numbers </h5>
+              <div class="col-xs-3"><h3>Program Fee</h3></div>
+              <h5 id="fee-output"class="col-xs-3">$29,750</h5>
             </div>
             <div id="laptop-stipend" class="row">
               <div class="col-xs-3"><h3>Laptop Stipend</h3></div>
-              <div class="col-xs-3" id="laptop-output">Stipend Amount</div>
-              <div class="col-xs-3"><h3></h3></div>
-              <div class="col-xs-3"></div>
+              <h5 class="col-xs-3" id="laptop-output">Stipend Amount</h5>
+              <div class="col-xs-3"><h3>ISA Percentage</h3></div>
+              <h5 id="isa-output" class="col-xs-3"></h5>
+
             </div>
             <div id="stipend-info" class="row">
-              <div class="col-xs-3"><h3>Monthly Stipend</h3></div>
-              <div class="col-xs-3" id="monthly-stipend-output"> Cost numbers </div>
               <div class="col-xs-3"><h3>Total Stipend</h3></div>
-              <div class="col-xs-3" id="total-stipend-output"></div>
+              <h5 class="col-xs-3" id="total-stipend-output"></h5>
+              <div class="col-xs-3"><h3><a href="" title="The ISA Cap is equal to double the program fees and whatever stipend you choose to take. No matter what your salary is, you'll never be required to pay more than this amount.">ISA Cap</a></h3></div>
+              <h5 class="col-xs-3" id="cap-output">Data goes here</h5>
+
               <!-- <div class="col-xs-3">Words about cost</div> -->
             </div>
-            <div id="rebate" class="row">
+            <!-- <div id="rebate" class="row">
               <div class="col-xs-4"><h3>Rebate Explanation</h3></div>
-              <div class="col-xs-8">Words explaining rebate</div>
-            </div>
+              <div class="col-xs-8"><h3>Words explaining rebate</h3></div>
+            </div> -->
           </div>
         </div>
       </div>
