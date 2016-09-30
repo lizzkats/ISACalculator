@@ -71,8 +71,14 @@ label{
   width:50%;
   margin-left:25%;
   margin-right:25%;
-  min-height:40em;
+  min-height:100%;
   background-color:#AED6EB;
+}
+#canvas{
+  min-height: 100%
+}
+#chart-row{
+  height:40em;
 }
 #output{
   background-color:#56C4AE;
@@ -112,7 +118,11 @@ h3{
 }
 
 /*Tablet 768 - 1024*/
-@media screen and (max-width: 1024px) and (min-width: 861px) {
+@media screen and (max-width: 1600px) and (min-width: 861px) {
+
+  #chart-row{
+    height: 25em;
+  }
   h3{
     font-size: 1.5em !important;
   }
@@ -120,6 +130,12 @@ h3{
 
  /*Phone 640 - 860 */
 @media screen and (max-width: 860px) {
+  h1{
+    font-size:1.6em; 
+  }
+  #chart-row{
+    height: 15em;
+  }
   h3{
     font-size: 1.4em !important;
   }
