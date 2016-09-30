@@ -35,3 +35,8 @@ Changing variables, like salary and amount of stipend, can result in thousands o
 - [X] The app will display labeled variables (e.g. Starting Salary: $80,000)
 - [X] User is able to see where the ISA caps on the chart.
 - [X] The artifact produced is properly licensed, preferably with the [MIT license](https://github.com/lizzkats/ISACalculator/blob/master/LICENSE).
+
+## Instructions
+
+- First ```npm install```
+- Then open the index.html file in your browser.
